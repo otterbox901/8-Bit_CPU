@@ -4,8 +4,8 @@ A microcoded 8-bit CPU built from 24 74HC-series logic and memory ICs: custom
 instruction set, 4 general-purpose registers, add/subtract ALU with Zero and
 Carry flags, and a control unit driven entirely by two EEPROMs.
 
-This is the **downsized** design. The earlier 50-IC version (16-bit
-addresses, AND/OR, a Negative flag, 3 control ROMs).
+<img width="960" height="200" alt="image" src="https://github.com/user-attachments/assets/d5882a13-a494-495a-a691-610ce441e075" />
+*Preview from JLCPCB
 
 ## Status: In progress
 
