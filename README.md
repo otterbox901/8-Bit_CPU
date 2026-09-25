@@ -12,8 +12,7 @@ Carry flags, and a control unit driven entirely by two EEPROMs.
 - [x] Instruction set (10 instructions, 1- and 2-byte encodings)
 - [x] Microcode ROM generator (`ROM/microcode_rom_gen.py`)
 - [x] Emulator + assembler, full test program passing
-- [x] Schematic: 24 ICs, generated from one netlist table
-      (`kicad_files/gen_schematic.py`), 0 ERC errors
+- [x] Schematic: 24 ICs, 0 ERC errors
 - [x] Schematic verified by simulation: the KiCad netlist runs the test program
       at the chip-pin level with the real ROM images (`kicad_files/sim_netlist.py`)
 - [x] PCB: 2-layer, 160 × 140 mm, fully routed (Freerouting), GND pour on
@@ -190,5 +189,5 @@ kicad-cli sch export bom --fields 'Reference,Value,Footprint,${QUANTITY}' --grou
     ├── sim_netlist.py       Netlist-level simulation
     ├── 8-bit cpu.kicad_sch  Generated schematic
     ├── 8-bit cpu.kicad_pcb  Routed 2-layer board
-    └── 8-bit cpu.kicad_pro  Project + design rules (written by gen_pcb.py)
+    └── 8-bit cpu.kicad_pro  Project + design rules
 ```
