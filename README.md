@@ -5,9 +5,7 @@ instruction set, 4 general-purpose registers, add/subtract ALU with Zero and
 Carry flags, and a control unit driven entirely by two EEPROMs.
 
 This is the **downsized** design. The earlier 50-IC version (16-bit
-addresses, AND/OR, a Negative flag, 3 control ROMs, and an AI-generated
-schematic that needed many repair passes) is archived in git at commit
-`3261fc8`.
+addresses, AND/OR, a Negative flag, 3 control ROMs).
 
 ## Status: In progress
 
