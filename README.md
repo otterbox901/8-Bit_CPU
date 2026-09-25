@@ -100,22 +100,6 @@ to be caught.
 
 ## PCB
 
-`kicad_files/gen_pcb.py` builds the board from the schematic's netlist:
-
-```bash
-cd kicad_files
-python3 gen_pcb.py place                          # new, unrouted board
-python3 gen_pcb.py route --freerouting <path>     # autoroute + GND pours
-python3 gen_pcb.py pour                           # redo pours only (keeps routing)
-kicad-cli pcb drc --schematic-parity "8-bit cpu.kicad_pcb"
-```
-
-`place` overwrites any routing, so after hand-editing the board, use KiCad's
-*Update PCB from Schematic* instead. Footprints are linked to their symbols,
-and the schematic's symbol IDs stay the same when it's regenerated.
-Placement lives in the `PLACEMENT` table. Each 100 nF cap sits right above
-its IC's VCC pin. Power nets (+5V, GND, VBUS) use a 0.6 mm `Power` net class.
-
 ### Ordering the board
 
 Upload `fab/8-bit-cpu-gerbers.zip` to JLCPCB, PCBWay, etc. with:
@@ -203,9 +187,7 @@ kicad-cli sch export bom --fields 'Reference,Value,Footprint,${QUANTITY}' --grou
 │   ├── bom.csv                Bill of materials
 │   └── positions.csv          Pick-and-place (board-corner origin)
 └── kicad_files/
-    ├── gen_schematic.py     Schematic generator (the design source)
     ├── sim_netlist.py       Netlist-level simulation
-    ├── gen_pcb.py           Board generator: placement, routing, pours
     ├── 8-bit cpu.kicad_sch  Generated schematic
     ├── 8-bit cpu.kicad_pcb  Routed 2-layer board
     └── 8-bit cpu.kicad_pro  Project + design rules (written by gen_pcb.py)
